@@ -107,6 +107,10 @@ dependencies {
     implementation "curse.maven:bosses-of-mass-destruction-forge-941573:6117186"
     implementation "curse.maven:cloth-config-348521:5729127"
     implementation "curse.maven:geckolib-388172:7415496"
+    implementation "curse.maven:cerbons-api-955605:6483943"
+    implementation "curse.maven:jade-324717:7545219"
+    implementation "curse.maven:sophisticated-backpacks-422301:7764249"
+    implementation "curse.maven:sophisticated-core-618298:7757835"
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

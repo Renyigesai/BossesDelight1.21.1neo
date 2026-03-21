@@ -1,5 +1,4 @@
 {
-	"credit": "Made with Blockbench",
 	"render_type": "minecraft:cutout",
 	"textures": {
 		"1": "bosses_delight:block/crystal_fruit_plant_0",
@@ -8,7 +7,7 @@
 	"elements": [
 		{
 			"from": [7, 0, 7],
-			"to": [9, 0, 9],
+			"to": [9, 0.005, 9],
 			"rotation": {"angle": 0, "axis": "y", "origin": [8, 5.30242, 8]},
 			"faces": {
 				"north": {"uv": [2, 11, 4, 14], "texture": "#1"},

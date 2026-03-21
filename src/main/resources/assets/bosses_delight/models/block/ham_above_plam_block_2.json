@@ -150,7 +150,7 @@
 				"up": {"uv": [8, 4, 4, 0], "texture": "#4"},
 				"down": {"uv": [12, 0, 8, 4], "texture": "#4"}
 			},
-			"forge_data": {
+			"neoforge_data": {
 				"block_light": 15,
 				"sky_light": 15,
 				"ambient_occlusion": false
@@ -168,7 +168,7 @@
 				"up": {"uv": [8, 4, 4, 0], "texture": "#4"},
 				"down": {"uv": [12, 0, 8, 4], "texture": "#4"}
 			},
-			"forge_data": {
+			"neoforge_data": {
 				"block_light": 15,
 				"sky_light": 15,
 				"ambient_occlusion": false

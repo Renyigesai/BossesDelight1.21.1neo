@@ -2,7 +2,9 @@ package io.github.reneg;
 
 import com.mojang.logging.LogUtils;
 import io.github.reneg.bossesdelight.common.init.BossesDelightBlock;
+import io.github.reneg.bossesdelight.common.init.BossesDelightEffects;
 import io.github.reneg.bossesdelight.common.init.BossesDelightItems;
+import io.github.reneg.bossesdelight.common.init.BossesDelightTabs;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.core.registries.Registries;
@@ -44,18 +46,14 @@ public class BossesDelight {
     public BossesDelight(IEventBus modEventBus, ModContainer modContainer) {
         BossesDelightItems.ITEMS.register(modEventBus);
         BossesDelightBlock.BLOCKS.register(modEventBus);
+        BossesDelightEffects.EFFECTS.register(modEventBus);
+        BossesDelightTabs.REGISTER.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
-        NeoForge.EVENT_BUS.register(this);
+//        NeoForge.EVENT_BUS.register(this);
 //        modContainer.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
         LOGGER.info("HELLO FROM COMMON SETUP");
-
-        if (Config.logDirtBlock) LOGGER.info("DIRT BLOCK >> {}", BuiltInRegistries.BLOCK.getKey(Blocks.DIRT));
-
-        LOGGER.info(Config.magicNumberIntroduction + Config.magicNumber);
-
-        Config.items.forEach((item) -> LOGGER.info("ITEM >> {}", item.toString()));
     }
 }

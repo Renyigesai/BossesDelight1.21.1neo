@@ -2,6 +2,8 @@ package io.github.reneg.bossesdelight.data;
 
 
 import io.github.reneg.BossesDelight;
+import io.github.reneg.bossesdelight.api.annotation.ItemData;
+import io.github.reneg.bossesdelight.common.init.BossesDelightItems;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.data.PackOutput;
 import net.minecraft.resources.ResourceLocation;
@@ -12,7 +14,9 @@ import net.neoforged.neoforge.client.model.generators.ItemModelBuilder;
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider;
 import net.neoforged.neoforge.client.model.generators.ModelFile;
 import net.neoforged.neoforge.common.data.ExistingFileHelper;
+import net.neoforged.neoforge.registries.DeferredItem;
 
+import java.lang.reflect.Field;
 import java.util.Objects;
 import java.util.function.Supplier;
 
@@ -24,39 +28,36 @@ public class ItemModel extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-//        Class<BakeriesItems> _class = BakeriesItems.class;
-//        for (Field field : _class.getDeclaredFields()) {
-//            boolean isAnnotationPresent = field.isAnnotationPresent(ItemData.class);
-//            if (isAnnotationPresent){
-//                try {
-//                    Object object = field.get(null);
-//                    if (object instanceof DeferredItem<?> deferredItem){
-//                        ItemData annotation = field.getAnnotation(ItemData.class);
-//                        ItemData.ModelType model = annotation.model();
-//                        if (model != ItemData.ModelType.CUSTOM) {
-//                            Item item = deferredItem.get();
-//                            if (model == ItemData.ModelType.GENERAL) {
-//                                basicItem(item);
-//                            }
-//                            if (model == ItemData.ModelType.TOOL) {
-//                                toolItem(item);
-//                            }
-//                            if (isBlockItem(item)){
-//                                BlockItem blockItem = (BlockItem) item;
-//                                if (model == ItemData.ModelType.BLOCK){
-//                                    blockItem(blockItem::getBlock);
-//                                }
-//                                if (model == ItemData.ModelType.BREAD){
-//                                    blockItem(blockItem::getBlock,"_1");
-//                                }
-//                            }
-//                        }
-//                    }
-//                } catch (IllegalAccessException e) {
-//                    throw new RuntimeException(e);
-//                }
-//            }
-//        }
+        Class<BossesDelightItems> _class = BossesDelightItems.class;
+        for (Field field : _class.getDeclaredFields()) {
+            boolean isAnnotationPresent = field.isAnnotationPresent(ItemData.class);
+            if (isAnnotationPresent){
+                try {
+                    Object object = field.get(null);
+                    if (object instanceof DeferredItem<?> deferredItem){
+                        ItemData annotation = field.getAnnotation(ItemData.class);
+                        ItemData.ModelType model = annotation.model();
+                        if (model != ItemData.ModelType.CUSTOM) {
+                            Item item = deferredItem.get();
+                            if (model == ItemData.ModelType.GENERAL) {
+                                basicItem(item);
+                            }
+                            if (model == ItemData.ModelType.TOOL) {
+                                toolItem(item);
+                            }
+                            if (isBlockItem(item)){
+                                BlockItem blockItem = (BlockItem) item;
+                                if (model == ItemData.ModelType.BLOCK){
+                                    blockItem(blockItem::getBlock);
+                                }
+                            }
+                        }
+                    }
+                } catch (IllegalAccessException e) {
+                    throw new RuntimeException(e);
+                }
+            }
+        }
     }
 
     private boolean isBlockItem(Item item){

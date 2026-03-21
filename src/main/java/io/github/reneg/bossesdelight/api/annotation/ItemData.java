@@ -6,7 +6,6 @@ import java.lang.annotation.*;
 /**
  * 自定义注解，用于标记和配置物品数据
  * 该注解可以应用于字段上，提供物品的多语言名称、类型、模型等信息
- * 不要改了，需要移到千古乐事使用!!!
  */
 @Target(ElementType.FIELD)
 @Retention(RetentionPolicy.RUNTIME)
@@ -39,7 +38,7 @@ public @interface ItemData {
      * @return 物品所属的分组名称
      * 在主创造物品栏中可以省略不写
      */
-    String group() default "0_bakeries_main";
+    String group() default "bosses_delight";
 
 /**
  * 物品类型枚举类
@@ -66,7 +65,6 @@ public @interface ItemData {
         BLOCK,
     // 工具模型类型
         TOOL,
-        BREAD,
     // 自定义模型类型
         CUSTOM
     }

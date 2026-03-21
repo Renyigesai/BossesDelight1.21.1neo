@@ -136,7 +136,7 @@
 				"up": {"uv": [0, 0, 0, 10], "rotation": 90, "texture": "#39"},
 				"down": {"uv": [0, 0, 0, 10], "rotation": 270, "texture": "#39"}
 			},
-			"forge_data": {
+			"neoforge_data": {
 				"block_light": 15,
 				"sky_light": 15,
 				"ambient_occlusion": false
@@ -154,7 +154,7 @@
 				"up": {"uv": [0, 11, 0, 0], "texture": "#39"},
 				"down": {"uv": [0, 11, 0, 0], "texture": "#39"}
 			},
-			"forge_data": {
+			"neoforge_data": {
 				"block_light": 15,
 				"sky_light": 15,
 				"ambient_occlusion": false
@@ -172,7 +172,7 @@
 				"up": {"uv": [0, 10, 0, 0], "rotation": 90, "texture": "#39"},
 				"down": {"uv": [0, 10, 0, 0], "rotation": 270, "texture": "#39"}
 			},
-			"forge_data": {
+			"neoforge_data": {
 				"block_light": 15,
 				"sky_light": 15,
 				"ambient_occlusion": false
@@ -190,7 +190,7 @@
 				"up": {"uv": [0, 0, 0, 11], "texture": "#39"},
 				"down": {"uv": [0, 0, 0, 11], "texture": "#39"}
 			},
-			"forge_data": {
+			"neoneoforge_data": {
 				"block_light": 15,
 				"sky_light": 15,
 				"ambient_occlusion": false

@@ -1,0 +1,4 @@
+/weather clear 1000000000000000000000000000000000000000000000000000
+/time set 4000
+/effect give Dev minecraft:resistance infinite 4
+/time set 3000
