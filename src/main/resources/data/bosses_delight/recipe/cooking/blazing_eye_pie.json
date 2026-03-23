@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "farmersdelight:pie_crust",
+    "count": 1
+  },
+  "cookingtime": 400,
+  "experience": 5.0,
+  "ingredients": [
+    {
+      "item": "bosses_delight:blazing_eye_shards"
+    },
+    {
+      "item": "bosses_delight:blazing_eye_shards"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    },
+    {
+      "item": "minecraft:blaze_powder"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "bosses_delight:blazing_eye_pie",
+    "count": 1
+  }
+}

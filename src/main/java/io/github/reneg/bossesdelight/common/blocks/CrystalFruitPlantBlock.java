@@ -2,6 +2,7 @@ package io.github.reneg.bossesdelight.common.blocks;
 
 import com.cerbon.bosses_of_mass_destruction.BossesOfMassDestruction;
 import com.cerbon.bosses_of_mass_destruction.item.BMDItems;
+import io.github.reneg.bossesdelight.common.config.Config;
 import io.github.reneg.bossesdelight.common.init.BossesDelightItems;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
@@ -63,8 +64,7 @@ public class CrystalFruitPlantBlock extends SweetBerryBushBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState p_51042_, BlockGetter p_51043_, BlockPos p_51044_) {
-        return true;
-        /*return Config.CRYSTAL_FRUIT_PLANTABLE_BLOCKS.contains(p_51042_.getBlock());*/
+        return Config.CRYSTAL_FRUIT_PLANTABLE_BLOCKS.contains(p_51042_.getBlock());
     }
 
     public boolean canSurvive(BlockState p_51028_, LevelReader p_51029_, BlockPos p_51030_) {

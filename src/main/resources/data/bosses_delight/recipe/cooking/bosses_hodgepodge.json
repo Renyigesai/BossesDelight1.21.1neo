@@ -1,0 +1,34 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "cookingtime": 400,
+  "experience": 5.0,
+  "ingredients": [
+    {
+      "item": "bosses_delight:bowl_of_lich_smoothies"
+    },
+    {
+      "item": "bosses_delight:bowl_of_obsidian_glazed_dragon_head"
+    },
+    {
+      "item": "bosses_delight:bowl_of_crystal_fruit_cube"
+    },
+    {
+      "item": "bosses_delight:bowl_of_ham_above_palm"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    },
+    {
+      "item": "farmersdelight:cooked_rice"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "bosses_delight:bosses_hodgepodge",
+    "count": 1
+  }
+}

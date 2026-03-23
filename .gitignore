@@ -1,46 +1,7 @@
-### Example user template template
-### Example user template
+# gradle
+build
+.gradle
 
-# IntelliJ project files
-.idea
-*.iml
-out
-gen
+# other
+run
 /run/
-/run/crash-reports/
-/.gradle/buildOutputCleanup/buildOutputCleanup.lock
-/.gradle/buildOutputCleanup/cache.properties
-/.gradle/8.8/checksums/checksums.lock
-/build/moddev/clientLegacyClasspath.txt
-/build/moddev/clientLog4j2.xml
-/build/moddev/clientRunProgramArgs.txt
-/build/moddev/clientRunVmArgs.txt
-/build/moddev/dataLegacyClasspath.txt
-/build/moddev/dataLog4j2.xml
-/build/moddev/dataRunProgramArgs.txt
-/build/moddev/dataRunVmArgs.txt
-/.gradle/8.8/executionHistory/executionHistory.bin
-/.gradle/8.8/executionHistory/executionHistory.lock
-/.gradle/8.8/fileHashes/fileHashes.bin
-/.gradle/8.8/fileHashes/fileHashes.lock
-/build/moddev/gameTestServerLegacyClasspath.txt
-/build/moddev/gameTestServerLog4j2.xml
-/build/moddev/gameTestServerRunProgramArgs.txt
-/build/moddev/gameTestServerRunVmArgs.txt
-/.gradle/8.8/dependencies-accessors/gc.properties
-/.gradle/8.8/gc.properties
-/.gradle/vcs-1/gc.properties
-/.gradle/8.8/fileChanges/last-build.bin
-/build/moddev/minecraft_assets.properties
-/build/moddev/artifacts/neoforge-21.1.200.jar
-/build/moddev/artifacts/neoforge-21.1.200-client-extra-aka-minecraft-resources.jar
-/build/moddev/artifacts/neoforge-21.1.200-merged.jar
-/build/moddev/artifacts/neoforge-21.1.200-sources.jar
-/build/tmp/createMinecraftArtifacts/nfrt-problem-report.json
-/build/tmp/createMinecraftArtifacts/nfrt_artifact_manifest.properties
-/build/tmp/downloadAssets/nfrt_artifact_manifest.properties
-/.gradle/buildOutputCleanup/outputFiles.bin
-/build/moddev/serverLegacyClasspath.txt
-/build/moddev/serverLog4j2.xml
-/build/moddev/serverRunProgramArgs.txt
-/build/moddev/serverRunVmArgs.txt

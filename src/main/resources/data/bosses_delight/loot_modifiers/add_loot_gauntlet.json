@@ -1,0 +1,11 @@
+{
+  "type": "farmersdelight:add_loot_table",
+  "conditions":
+  [
+    {
+      "condition": "neoforge:loot_table_id",
+      "loot_table_id": "bosses_of_mass_destruction:chests/gauntlet"
+    }
+  ],
+  "lootTable": "bosses_delight:chests/add_gauntlet"
+}

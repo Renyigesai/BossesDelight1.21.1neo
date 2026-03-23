@@ -111,6 +111,7 @@ dependencies {
     implementation "curse.maven:jade-324717:7545219"
     implementation "curse.maven:sophisticated-backpacks-422301:7764249"
     implementation "curse.maven:sophisticated-core-618298:7757835"
+    implementation "curse.maven:jei-238222:7420587"
     // Example mod dependency with JEI
     // The JEI API is declared for compile time use, while the full JEI artifact is used at runtime
     // compileOnly "mezz.jei:jei-${mc_version}-common-api:${jei_version}"

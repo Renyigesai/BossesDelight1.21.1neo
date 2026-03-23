@@ -1,5 +1,6 @@
 package io.github.reneg.bossesdelight.common.blocks;
 
+import io.github.reneg.bossesdelight.common.config.Config;
 import io.github.reneg.bossesdelight.common.init.BossesDelightBlock;
 import io.github.reneg.bossesdelight.common.init.BossesDelightItems;
 import net.minecraft.core.BlockPos;
@@ -46,7 +47,7 @@ public class ObsidianOnionsBlock extends CropBlock {
                     CommonHooks.fireCropGrowPost(p_221051_, p_221052_, p_221050_);
                 }
             }
-            if(p_221053_.nextInt(60) == 0 /*&& Config.OBSIDIAN_ONION_CONVERTING.get()*/){
+            if(p_221053_.nextInt(60) == 0 && Config.OBSIDIAN_ONION_CONVERTING.get()){
                 p_221051_.setBlock(p_221052_.below(), Blocks.CRYING_OBSIDIAN.defaultBlockState(), 2);
             }
         }
@@ -90,8 +91,8 @@ public class ObsidianOnionsBlock extends CropBlock {
 
     @Override
     protected boolean mayPlaceOn(BlockState p_51042_, BlockGetter p_51043_, BlockPos p_51044_) {
-        return true;
-//        return Config.OBSIDIAN_ONION_PLANTABLE_BLOCKS.contains(p_51042_.getBlock());
+//        return true;
+        return Config.OBSIDIAN_ONION_PLANTABLE_BLOCKS.contains(p_51042_.getBlock());
     }
 
     public boolean canSurvive(BlockState p_51028_, LevelReader p_51029_, BlockPos p_51030_) {

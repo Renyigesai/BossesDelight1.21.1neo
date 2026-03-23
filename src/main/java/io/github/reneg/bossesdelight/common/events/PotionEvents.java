@@ -7,6 +7,8 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.damagesource.DamageTypes;
 import net.minecraft.world.effect.MobEffect;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.projectile.Projectile;
 import net.minecraft.world.level.Level;
@@ -28,9 +30,7 @@ public class PotionEvents {
                 if(event.getSource().getEntity() == null) return;
                 if(event.getSource().getEntity() instanceof LivingEntity living && living.hasEffect(BossesDelightEffects.BREAKDOWN)) return;
                 float angle = Math.abs(event.getSource().getEntity().getYRot() - entity.getYRot()) % 360;
-                if(angle < 90|| angle > 270){
-                    System.out.println("Amount " + event.getAmount());
-                    System.out.println("NewAmount " + event.getAmount() * Math.pow(0.5, entity.getEffect(effect).getAmplifier()));
+                if(angle < 90|| angle > 270){;
                     event.setAmount((float) (event.getAmount() * Math.pow(0.5, entity.getEffect(effect).getAmplifier())));
                 }
             }
@@ -48,6 +48,26 @@ public class PotionEvents {
                 if(entity.getRandom().nextInt(10) < 2 * entity.getEffect(effect2).getAmplifier() || event.getSource().getDirectEntity() instanceof Projectile){
                     level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ALLAY_ITEM_TAKEN, SoundSource.NEUTRAL, 1.0F, 0.3F);
                     event.setCanceled(true);
+                }
+            }
+        }
+    }
+
+    @SubscribeEvent
+    public static void onLastStand(LivingIncomingDamageEvent event){
+        Level level = event.getEntity().level();
+        if (!level.isClientSide()) {
+            LivingEntity entity = event.getEntity();
+            Holder<MobEffect> effect = BossesDelightEffects.LAST_STAND;
+
+            if(entity.hasEffect(effect)){
+                if(event.getAmount() >= entity.getHealth() && entity.getHealth() > 1 && !event.getSource().is(DamageTypes.GENERIC_KILL)){
+                    event.setCanceled(true);
+                    if(!entity.hasEffect(MobEffects.DAMAGE_RESISTANCE)){
+                        entity.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, (int) Math.pow(2, entity.getEffect(effect).getAmplifier() + 1) * 20, 4));
+                    }
+                    level.playSound(null, entity.getX(), entity.getY(), entity.getZ(), SoundEvents.ANVIL_HIT, SoundSource.NEUTRAL, 1.0F, 0.3F);
+                    entity.setHealth(1);
                 }
             }
         }

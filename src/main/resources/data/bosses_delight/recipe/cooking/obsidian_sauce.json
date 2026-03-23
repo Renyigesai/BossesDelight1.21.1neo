@@ -1,0 +1,22 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:bowl",
+    "count": 1
+  },
+  "cookingtime": 100,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "bosses_delight:obsidian_onion"
+    },
+    {
+      "item": "bosses_delight:obsidian_onion"
+    }
+  ],
+  "recipe_book_tab": "misc",
+  "result": {
+    "id": "bosses_delight:obsidian_sauce",
+    "count": 1
+  }
+}

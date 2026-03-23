@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "t": {
+      "item": "bosses_of_mass_destruction:obsidian_heart"
+    },
+    "r": {
+      "item": "bosses_of_mass_destruction:obsidilith_rune"
+    },
+    "s": {
+      "item": "farmersdelight:diamond_knife"
+    }
+  },
+  "pattern": [
+    "t",
+    "r",
+    "s"
+  ],
+  "result": {
+    "id": "bosses_delight:obsidian_heart_knife",
+    "count": 1
+  }
+}

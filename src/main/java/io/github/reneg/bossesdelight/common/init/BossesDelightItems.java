@@ -4,19 +4,31 @@ import io.github.reneg.BossesDelight;
 import io.github.reneg.bossesdelight.api.annotation.ItemData;
 import io.github.reneg.bossesdelight.common.items.*;
 import io.github.reneg.bossesdelight.common.tier.ItemTier;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.component.ItemContainerContents;
 import net.neoforged.neoforge.registries.DeferredItem;
 import net.neoforged.neoforge.registries.DeferredRegister;
 import vectorwing.farmersdelight.common.item.ConsumableItem;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
+import vectorwing.farmersdelight.common.item.KnifeItem;
 
 public class BossesDelightItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BossesDelight.MODID);
 
+    @ItemData(zhCn = "ºÚê×ÐÄÈÐ")
+    public static final DeferredItem<Item> OBSIDIAN_HEART_KNIFE;
+
+    @ItemData(zhCn = "Ðé¿Õ¼¬ÈÐ")
+    public static final DeferredItem<Item> VOID_THORN_KNIFE;
+
     @ItemData(zhCn = "ÌúÕÆ",model = ItemData.ModelType.CUSTOM)
     public static final DeferredItem<Item> GAUNTLET;
+
+    @ItemData(zhCn = "Áé»ê¹ø",model = ItemData.ModelType.BLOCK)
+    public static final DeferredItem<Item> SOUL_COOKING_POT;
 
     @ItemData(zhCn = "ÆÆËéµÄºÚê×Ê¯Ö®ÐÄ")
     public static final DeferredItem<Item> BROKEN_OBSIDIAN_HEART;
@@ -110,7 +122,13 @@ public class BossesDelightItems {
 
     static {
 
-        GAUNTLET = ITEMS.register("gauntlet", () -> new Gauntlet(ItemTier.GAUNTLET,defaultBuilder()));
+        OBSIDIAN_HEART_KNIFE = ITEMS.register("obsidian_heart_knife", () -> new ObsidianHeartKnifeItem(ItemTier.OBSIDIAN_HEART,knifeItem(ItemTier.OBSIDIAN_HEART)));
+
+        VOID_THORN_KNIFE = ITEMS.register("void_thorn_knife", () -> new ObsidianHeartKnifeItem(ItemTier.VOID_THORN,knifeItem(ItemTier.VOID_THORN)));
+
+        GAUNTLET = ITEMS.register("gauntlet", () -> new GauntletItem(ItemTier.GAUNTLET,defaultBuilder().attributes(KnifeItem.createAttributes(ItemTier.GAUNTLET, 0.5F, -2.0F))));
+
+        SOUL_COOKING_POT = ITEMS.register("soul_cooking_pot",()-> new SoulCookingPotItem(BossesDelightBlock.SOUL_COOKING_POT.get(),defaultBuilder().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
         BROKEN_OBSIDIAN_HEART = food("broken_obsidian_heart",BossesDelightFoods.BROKEN_OBSIDIAN_HEART);
         OBSIDIAN_SAUCE = ITEMS.register("obsidian_sauce",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.OBSIDIAN_SAUCE)));
@@ -159,6 +177,10 @@ public class BossesDelightItems {
 
     private static Item.Properties defaultBuilder() {
         return new Item.Properties();
+    }
+
+    private static Item.Properties knifeItem(Tier tier){
+        return defaultBuilder().attributes(KnifeItem.createAttributes(tier,0.5F, -2.0F));
     }
 
     private static Item.Properties bowlFoodBuilder() {

@@ -1,0 +1,20 @@
+{
+  "type": "farmersdelight:cutting",
+  "ingredients": [
+    {
+      "item": "bosses_of_mass_destruction:obsidian_heart"
+    }
+  ],
+  "result": [
+    {
+      "item": {
+        "count": 1,
+        "id": "bosses_delight:broken_obsidian_heart"
+      }
+    }
+  ],
+  "tool": {
+    "tag": "minecraft:pickaxes",
+    "action": "pickaxe_dig"
+  }
+}

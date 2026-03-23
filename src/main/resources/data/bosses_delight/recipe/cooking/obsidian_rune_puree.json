@@ -1,0 +1,28 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "bosses_of_mass_destruction:obsidilith_rune",
+    "count": 1
+  },
+  "cookingtime": 400,
+  "experience": 5.0,
+  "ingredients": [
+    {
+      "item": "minecraft:dragon_breath"
+    },
+    {
+      "item": "bosses_delight:obsidian_onion"
+    },
+    {
+      "item": "minecraft:end_crystal"
+    },
+    {
+      "item": "bosses_delight:broken_obsidian_heart"
+    }
+  ],
+  "recipe_book_tab": "meals",
+  "result": {
+    "id": "bosses_delight:obsidian_rune_puree",
+    "count": 1
+  }
+}

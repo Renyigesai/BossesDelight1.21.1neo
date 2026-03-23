@@ -34,4 +34,56 @@ public class ItemTier {
             return Ingredient.of(Items.NETHERITE_INGOT);
         }
     };
+
+    public static final Tier  OBSIDIAN_HEART = new Tier() {
+        public int getUses() {
+            return 1024;
+        }
+
+        public float getSpeed() {
+            return 8.0F;
+        }
+
+        public float getAttackDamageBonus() {
+            return 4.0F;
+        }
+
+        public @NotNull TagKey<Block> getIncorrectBlocksForDrops() {
+            return BlockTags.NEEDS_DIAMOND_TOOL;
+        }
+
+        public int getEnchantmentValue() {
+            return 25;
+        }
+
+        public @NotNull Ingredient getRepairIngredient() {
+            return Ingredient.of(Items.OBSIDIAN);
+        }
+    };
+
+    public static final Tier  VOID_THORN = new Tier() {
+        public int getUses() {
+            return 768;
+        }
+
+        public float getSpeed() {
+            return 12.0F;
+        }
+
+        public float getAttackDamageBonus() {
+            return 2.0F;
+        }
+
+        public @NotNull TagKey<Block> getIncorrectBlocksForDrops() {
+            return BlockTags.NEEDS_DIAMOND_TOOL;
+        }
+
+        public int getEnchantmentValue() {
+            return 15;
+        }
+
+        public @NotNull Ingredient getRepairIngredient() {
+            return Ingredient.of(Items.DRAGON_BREATH);
+        }
+    };
 }

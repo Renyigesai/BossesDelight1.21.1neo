@@ -1,5 +1,7 @@
 package io.github.reneg.bossesdelight.common.items;
 
+import io.github.reneg.BossesDelight;
+import io.github.reneg.bossesdelight.common.init.BossesDelightTriggers;
 import net.minecraft.ChatFormatting;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
@@ -41,7 +43,7 @@ public class NectarJellyItem extends Item {
             }
             if(!defaultState.equals(state)){
                 if (!level.isClientSide() && p_40637_.getPlayer() instanceof ServerPlayer player) {
-//                    CriticalTriggerRegistry.JELLY_TRIGGER.trigger(player);
+                    BossesDelightTriggers.USE_NECTAR_JELLY_TRIGGER.get().trigger(player);
                 }
                 level.setBlock(blockpos, defaultState, 2);
                 level.playSound((Player)null, blockpos.getX(), blockpos.getY(), blockpos.getZ(), SoundEvents.SLIME_BLOCK_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);

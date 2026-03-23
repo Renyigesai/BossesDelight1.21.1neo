@@ -1,0 +1,7 @@
+{
+  "replace": false,
+  "entries": [
+    "bosses_delight:add_loot_obsidilith",
+    "bosses_delight:add_loot_gauntlet"
+  ]
+}
