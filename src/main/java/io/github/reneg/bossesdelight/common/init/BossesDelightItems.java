@@ -18,10 +18,10 @@ public class BossesDelightItems {
 
     public static final DeferredRegister.Items ITEMS = DeferredRegister.createItems(BossesDelight.MODID);
 
-    @ItemData(zhCn = "ºÚê×ÐÄÈÐ")
+    @ItemData(zhCn = "ºÚê×ÐÄÈÐ",model = ItemData.ModelType.TOOL)
     public static final DeferredItem<Item> OBSIDIAN_HEART_KNIFE;
 
-    @ItemData(zhCn = "Ðé¿Õ¼¬ÈÐ")
+    @ItemData(zhCn = "Ðé¿Õ¼¬ÈÐ",model = ItemData.ModelType.TOOL)
     public static final DeferredItem<Item> VOID_THORN_KNIFE;
 
     @ItemData(zhCn = "ÌúÕÆ",model = ItemData.ModelType.CUSTOM)
