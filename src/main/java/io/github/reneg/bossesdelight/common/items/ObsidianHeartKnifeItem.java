@@ -31,6 +31,7 @@ public class ObsidianHeartKnifeItem extends TippedKnifeItems{
 //        p_40994_.hurtAndBreak(1, p_40996_, (p_41007_) -> {
 //            p_41007_.broadcastBreakEvent(EquipmentSlot.MAINHAND);
 //        });
+        p_40994_.hurtAndBreak(1,p_40995_,LivingEntity.getSlotForHand(p_40995_.getUsedItemHand()));
         double d0 = p_40995_.getX() - p_40996_.getX();
         double d1 = p_40995_.getZ() - p_40996_.getZ();
         double d2 = Math.max(d0 * d0 + d1 * d1, 0.001D);

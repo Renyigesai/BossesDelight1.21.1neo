@@ -59,7 +59,7 @@ public class CrystalFruitPlantBlock extends SweetBerryBushBlock {
                 return InteractionResult.SUCCESS;
             }
         }
-        return super.useWithoutItem(state, level, pos, player, hitResult);
+        return InteractionResult.FAIL;
     }
 
     @Override

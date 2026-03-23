@@ -124,13 +124,13 @@ public class BossesDelightItems {
 
         OBSIDIAN_HEART_KNIFE = ITEMS.register("obsidian_heart_knife", () -> new ObsidianHeartKnifeItem(ItemTier.OBSIDIAN_HEART,knifeItem(ItemTier.OBSIDIAN_HEART)));
 
-        VOID_THORN_KNIFE = ITEMS.register("void_thorn_knife", () -> new ObsidianHeartKnifeItem(ItemTier.VOID_THORN,knifeItem(ItemTier.VOID_THORN)));
+        VOID_THORN_KNIFE = ITEMS.register("void_thorn_knife", () -> new VoidThornKnifeItem(ItemTier.VOID_THORN,knifeItem(ItemTier.VOID_THORN)));
 
         GAUNTLET = ITEMS.register("gauntlet", () -> new GauntletItem(ItemTier.GAUNTLET,defaultBuilder().attributes(KnifeItem.createAttributes(ItemTier.GAUNTLET, 0.5F, -2.0F))));
 
         SOUL_COOKING_POT = ITEMS.register("soul_cooking_pot",()-> new SoulCookingPotItem(BossesDelightBlock.SOUL_COOKING_POT.get(),defaultBuilder().component(DataComponents.CONTAINER, ItemContainerContents.EMPTY)));
 
-        BROKEN_OBSIDIAN_HEART = food("broken_obsidian_heart",BossesDelightFoods.BROKEN_OBSIDIAN_HEART);
+        BROKEN_OBSIDIAN_HEART = food("broken_obsidian_heart",BossesDelightFoods.BROKEN_OBSIDIAN_HEART,true);
         OBSIDIAN_SAUCE = ITEMS.register("obsidian_sauce",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.OBSIDIAN_SAUCE)));
         OBSIDIAN_ONION = ITEMS.register("obsidian_onion",()-> new TippedBlockItems(BossesDelightBlock.OBSIDIAN_ONION_BLOCK.get(), defaultBuilder().food(BossesDelightFoods.OBSIDIAN_ONION)));
         OBSIDIAN_RUNE_PUREE = ITEMS.register("obsidian_rune_puree",()-> new ConsumableItem(defaultBuilder().food(BossesDelightFoods.OBSIDIAN_RUNE_PUREE),true){
@@ -141,16 +141,16 @@ public class BossesDelightItems {
         });
         OBSIDIAN_RUNE_COCKTAIL = ITEMS.register("obsidian_rune_cocktail",()-> new DrinkableItem(defaultBuilder().food(BossesDelightFoods.OBSIDIAN_RUNE_COCKTAIL),true));
         OBSIDIAN_GLAZED_DRAGON_HEAD = ITEMS.register("obsidian_glazed_dragon_head",()-> new BlockItem(BossesDelightBlock.OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK.get(), defaultBuilder().stacksTo(1)));
-        BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD = ITEMS.register("bowl_of_obsidian_glazed_dragon_head",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD)));
-        CRYSTAL_FRUIT_SLICE = food("crystal_fruit_slice",BossesDelightFoods.CRYSTAL_FRUIT_SLICE);
+        BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD = ITEMS.register("bowl_of_obsidian_glazed_dragon_head",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD),true));
+        CRYSTAL_FRUIT_SLICE = food("crystal_fruit_slice",BossesDelightFoods.CRYSTAL_FRUIT_SLICE,true);
         CRYSTAL_FRUIT_SEEDS = ITEMS.register("crystal_fruit_seeds", () -> new TippedBlockItems(BossesDelightBlock.CRYSTAL_FRUIT_BLOCK.get(),defaultBuilder()));
         CRYSTAL_CUP_CAKE = food("crystal_cup_cake",BossesDelightFoods.CRYSTAL_CUP_CAKE,true);
         BLOSSOM_SALAD = ITEMS.register("blossom_salad",()-> new ConsumableItem(defaultBuilder().food(BossesDelightFoods.BLOSSOM_SALAD).craftRemainder(Items.BOWL),true));
         CRYSTAL_FRUIT_CUBE = ITEMS.register("crystal_fruit_cube_block",()-> new ItemNameBlockItem(BossesDelightBlock.CRYSTAL_FRUIT_CUBE_BLOCK.get(),defaultBuilder().stacksTo(1)));
-        BOWL_OF_CRYSTAL_FRUIT_CUBE = ITEMS.register("bowl_of_crystal_fruit_cube",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_CRYSTAL_FRUIT_CUBE)));
+        BOWL_OF_CRYSTAL_FRUIT_CUBE = ITEMS.register("bowl_of_crystal_fruit_cube",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_CRYSTAL_FRUIT_CUBE),true));
         CRYSTAL_FRUIT_CIDER = ITEMS.register("crystal_fruit_cider",()-> new CrystalFruitCiderItem(defaultBuilder().craftRemainder(Items.GLASS_BOTTLE).stacksTo(16)));
         BLAZING_EYE_SHARDS = food("blazing_eye_shards",BossesDelightFoods.BLAZING_EYE_SHARDS);
-        ANCIENT_ROLL = food("ancient_roll",BossesDelightFoods.ANCIENT_ROLL);
+        ANCIENT_ROLL = food("ancient_roll",BossesDelightFoods.ANCIENT_ROLL,true);
         BLAZING_EYE_PIE = ITEMS.register("blazing_eye_pie",()-> new ItemNameBlockItem(BossesDelightBlock.BLAZING_EYE_PIE_BLOCK.get(),defaultBuilder().stacksTo(1)));
         BLAZING_EYE_PIE_SLICE = food("blazing_eye_pie_slice",BossesDelightFoods.BLAZING_EYE_PIE_SLICE,true);
         HAM_ABOVE_PALM = ITEMS.register("ham_above_palm",()-> new ItemNameBlockItem(BossesDelightBlock.HAM_ABOVE_PALM_BLOCK.get(),defaultBuilder().stacksTo(1)));
