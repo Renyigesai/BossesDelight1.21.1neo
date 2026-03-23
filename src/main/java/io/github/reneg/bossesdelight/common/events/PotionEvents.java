@@ -30,8 +30,8 @@ public class PotionEvents {
                 if(event.getSource().getEntity() == null) return;
                 if(event.getSource().getEntity() instanceof LivingEntity living && living.hasEffect(BossesDelightEffects.BREAKDOWN)) return;
                 float angle = Math.abs(event.getSource().getEntity().getYRot() - entity.getYRot()) % 360;
-                if(angle < 90|| angle > 270){;
-                    event.setAmount((float) (event.getAmount() * Math.pow(0.5, entity.getEffect(effect).getAmplifier())));
+                if(angle < 90|| angle > 270){
+                    event.setAmount((float) (event.getAmount() * Math.pow(0.5, entity.getEffect(effect).getAmplifier() + 1)));
                 }
             }
         }

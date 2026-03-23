@@ -6,8 +6,8 @@ license = "GNU LGPL 3.0"
 [[mods]]
 modId = "bosses_delight"
 version = "1.0.0"
-displayName = "BossesDelight"
-authors = "BF_Meow, rawchickenNEG, Renyigesai"
+displayName = "Bosses Delight"
+authors = "BF_Meow, rawchickenNEG"
 description = ''''''
 
 [[mixins]]

@@ -181,3 +181,7 @@ idea {
         downloadJavadoc = true
     }
 }
+
+jar {
+    exclude 'io/github/reneg/bossesdelight/data/**'
+}

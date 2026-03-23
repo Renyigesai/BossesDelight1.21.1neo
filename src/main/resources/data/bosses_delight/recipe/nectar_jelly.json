@@ -1,0 +1,27 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "key": {
+    "a": {
+      "item": "minecraft:snowball"
+    },
+    "b": {
+      "item": "minecraft:stick"
+    },
+    "c": {
+      "item": "minecraft:honey_block"
+    },
+    "d": {
+      "item": "bosses_of_mass_destruction:brimstone_nectar"
+    }
+  },
+  "pattern": [
+    " ad",
+    "aca",
+    "ba "
+  ],
+  "result": {
+    "id": "bosses_delight:nectar_jelly",
+    "count": 1
+  }
+}

@@ -73,6 +73,11 @@ public class Languages extends AbstractLanguageProvider {
         add("bosses_delight.tooltip.cooking_pot.many_servings","Holds %s servings of:","装有%s份：");
         add("bosses_delight.container.soul_cooking_pot","Soul Cooking Pot","灵魂锅");
         add("bosses_delight.jei.soul_cooking","Soul Cooking","灵魂烹饪");
+
+        add("effect.bosses_delight.last_stand.description", "You will keep at least 1 health after hurt by a lethal damage when your health is more than 1, and then gain resistance 5 effect according to the effect level.", "当你生命值大于1时受到致命伤害至少会保留1点生命值，而后根据药水等级获得抗性提升5的效果。");
+        add("effect.bosses_delight.gauntlet_protection.description", "The damage you taken will be reduced if the damage source is not in front of you.", "受伤时如果伤害来源不在你面前，则降低你受到的伤害。");
+        add("effect.bosses_delight.intangible.description", "Has chance to avoid damage, and always avoid damage from projectiles", "有概率规避伤害，完全规避弹射物伤害。");
+        add("effect.bosses_delight.breakdown.description", "You can hit through the protection of Nether Gauntlet (including Gauntlet Protection effect)", "你可以击穿下界铁掌的防护(包括铁腕加护效果)");
     }
 
     private void addCreativeModeTabs() {

@@ -1,0 +1,33 @@
+{
+  "type": "farmersdelight:cooking",
+  "container": {
+    "id": "minecraft:skeleton_skull",
+    "count": 1
+  },
+  "cookingtime": 400,
+  "experience": 20.0,
+  "ingredients": [
+    {
+      "item": "bosses_of_mass_destruction:ancient_anima"
+    },
+    {
+      "item": "bosses_of_mass_destruction:ancient_anima"
+    },
+    {
+      "item": "minecraft:packed_ice"
+    },
+    {
+      "item": "minecraft:packed_ice"
+    },
+    {
+      "item": "bosses_of_mass_destruction:soul_star"
+    },
+    {
+      "item": "bosses_of_mass_destruction:soul_star"
+    }
+  ],
+  "result": {
+    "id": "bosses_delight:lich_smoothies_block",
+    "count": 1
+  }
+}

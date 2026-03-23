@@ -26,27 +26,28 @@ import javax.annotation.ParametersAreNonnullByDefault;
 public class JEIPlugin implements IModPlugin {
     private static final ResourceLocation ID = ResourceLocation.fromNamespaceAndPath(BossesDelight.MODID, "jei_plugin");
 
+    /*未启用物品，jei适配暂时注释*/
     @Override
     public void registerCategories(IRecipeCategoryRegistration registration) {
-        registration.addRecipeCategories(new SoulCookingRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
+//        registration.addRecipeCategories(new SoulCookingRecipeCategory(registration.getJeiHelpers().getGuiHelper()));
     }
 
 
     @Override
     public void registerRecipes(IRecipeRegistration registration) {
         RecipeManager recipeManager = Minecraft.getInstance().level.getRecipeManager();
-        registration.addRecipes(BossesDelightRecipeTypes.JEI.SOUL_COOKING, recipeManager.getAllRecipesFor(BossesDelightRecipeTypes.SOUL_COOKING.get()));
+//        registration.addRecipes(BossesDelightRecipeTypes.JEI.SOUL_COOKING, recipeManager.getAllRecipesFor(BossesDelightRecipeTypes.SOUL_COOKING.get()));
     }
 
 
     @Override
     public void registerRecipeCatalysts(IRecipeCatalystRegistration registration) {
-        registration.addRecipeCatalyst(new ItemStack(BossesDelightItems.SOUL_COOKING_POT.get()), BossesDelightRecipeTypes.JEI.SOUL_COOKING);
+//        registration.addRecipeCatalyst(new ItemStack(BossesDelightItems.SOUL_COOKING_POT.get()), BossesDelightRecipeTypes.JEI.SOUL_COOKING);
     }
 
     @Override
     public void registerGuiHandlers(IGuiHandlerRegistration registration){
-        registration.addRecipeClickArea(SoulCookingPotScreen.class, 89, 25, 24, 17, BossesDelightRecipeTypes.JEI.SOUL_COOKING);
+//        registration.addRecipeClickArea(SoulCookingPotScreen.class, 89, 25, 24, 17, BossesDelightRecipeTypes.JEI.SOUL_COOKING);
     }
 
 
