@@ -7,6 +7,8 @@
       <excludeFolder url="file://$MODULE_DIR$/../../run/mods" />
       <excludeFolder url="file://$MODULE_DIR$/../../run/resourcepacks" />
       <excludeFolder url="file://$MODULE_DIR$/../../run/saves/新的世界/datapacks" />
+      <excludeFolder url="file://$MODULE_DIR$/../../run" />
+      <excludeFolder url="file://$MODULE_DIR$/../../run/config/jei" />
     </content>
   </component>
 </module>

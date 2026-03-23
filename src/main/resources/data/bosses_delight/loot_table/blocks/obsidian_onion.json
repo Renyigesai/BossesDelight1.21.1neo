@@ -34,7 +34,7 @@
       "conditions": [
         {
           "condition": "minecraft:block_state_property",
-          "block": "bosses_delight:obsidian_onions",
+          "block": "bosses_delight:obsidian_onion",
           "properties": {
             "age": "7"
           }
