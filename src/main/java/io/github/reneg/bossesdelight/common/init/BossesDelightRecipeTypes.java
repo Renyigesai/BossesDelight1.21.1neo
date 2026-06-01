@@ -6,7 +6,6 @@ import net.minecraft.world.item.crafting.Recipe;
 import net.minecraft.world.item.crafting.RecipeHolder;
 import net.minecraft.world.item.crafting.RecipeType;
 import net.neoforged.neoforge.registries.DeferredRegister;
-import vectorwing.farmersdelight.common.crafting.CookingPotRecipe;
 
 import java.util.function.Supplier;
 

@@ -19,7 +19,7 @@ public class ItemTier {
         }
 
         public float getAttackDamageBonus() {
-            return 5.0F;
+            return 6.5F;
         }
 
         public @NotNull TagKey<Block> getIncorrectBlocksForDrops() {
@@ -45,7 +45,7 @@ public class ItemTier {
         }
 
         public float getAttackDamageBonus() {
-            return 4.0F;
+            return 5.5F;
         }
 
         public @NotNull TagKey<Block> getIncorrectBlocksForDrops() {
@@ -71,7 +71,7 @@ public class ItemTier {
         }
 
         public float getAttackDamageBonus() {
-            return 2.0F;
+            return 3.5F;
         }
 
         public @NotNull TagKey<Block> getIncorrectBlocksForDrops() {

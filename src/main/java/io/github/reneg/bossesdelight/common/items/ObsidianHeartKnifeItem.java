@@ -1,5 +1,6 @@
 package io.github.reneg.bossesdelight.common.items;
 
+import net.minecraft.world.InteractionHand;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.Entity;
@@ -20,8 +21,9 @@ public class ObsidianHeartKnifeItem extends TippedKnifeItems{
     @Override
     public void inventoryTick(ItemStack itemstack, Level world, Entity entity, int slot, boolean selected) {
         super.inventoryTick(itemstack, world, entity, slot, selected);
-        if(entity instanceof LivingEntity living && selected){
-            if(world.getGameTime() % 20L == 0L){
+        if(entity instanceof LivingEntity living){
+            boolean flag = living.getItemInHand(InteractionHand.MAIN_HAND).is(this) || living.getItemInHand(InteractionHand.OFF_HAND).is(this);
+            if(flag && world.getGameTime() % 20L == 0L){
                 living.addEffect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 100, 1));
             }
         }

@@ -5,7 +5,7 @@ license = "GNU LGPL 3.0"
 
 [[mods]]
 modId = "bosses_delight"
-version = "1.0.0"
+version = "1.0.2"
 displayName = "Bosses Delight"
 authors = "BF_Meow, rawchickenNEG"
 description = ''''''
