@@ -2,6 +2,9 @@
   "replace": false,
   "entries": [
     "bosses_delight:add_loot_obsidilith",
-    "bosses_delight:add_loot_gauntlet"
+    "bosses_delight:add_loot_gauntlet",
+    "bosses_delight:add_ancient_roll_to_bastion_other",
+    "bosses_delight:add_ancient_roll_to_bastion_hoglin_stable",
+    "bosses_delight:add_ancient_roll_to_bastion_bridge"
   ]
 }

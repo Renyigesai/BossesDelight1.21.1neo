@@ -1,0 +1,18 @@
+{
+  "type": "bosses_delight:soul_cooking",
+  "container": {
+    "id": "minecraft:bucket",
+    "count": 1
+  },
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:water_bucket"
+    }
+  ],
+  "result": {
+    "id": "minecraft:powder_snow_bucket",
+    "count": 1
+  }
+}

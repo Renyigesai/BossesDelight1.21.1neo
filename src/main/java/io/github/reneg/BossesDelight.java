@@ -3,6 +3,7 @@ package io.github.reneg;
 import com.mojang.logging.LogUtils;
 import io.github.reneg.bossesdelight.common.advancement.UseNectarJellyTrigger;
 import io.github.reneg.bossesdelight.common.config.Config;
+import io.github.reneg.bossesdelight.common.config.ServerConfig;
 import io.github.reneg.bossesdelight.common.init.*;
 import net.minecraft.advancements.CriteriaTriggers;
 import net.neoforged.bus.api.IEventBus;
@@ -17,7 +18,7 @@ import org.slf4j.Logger;
 public class BossesDelight {
     // Define mod id in a common place for everything to reference
     public static final String MODID = "bosses_delight";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public BossesDelight(IEventBus modEventBus, ModContainer modContainer) {
         BossesDelightItems.ITEMS.register(modEventBus);
@@ -31,6 +32,7 @@ public class BossesDelight {
         BossesDelightTriggers.TRIGGERS.register(modEventBus);
         modEventBus.addListener(this::commonSetup);
         modContainer.registerConfig(ModConfig.Type.COMMON, Config.COMMON_SPEC);
+        modContainer.registerConfig(ModConfig.Type.SERVER, ServerConfig.COMMON_SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {

@@ -54,6 +54,8 @@ public class Languages extends AbstractLanguageProvider {
         addToolTip("nectar_jelly","Right Click on consumed placeable food block to renew the consumed parts.","右击食用过的可放置的食物来补全消耗的部分。");
         addToolTip("obsidian_heart_knife","Apply Resistance Effect on you when holding, attack with stronger knock back to the target.","手持时获得抗性提升效果，攻击时可对目标造成更远的击退");
         addToolTip("void_thorn_knife","Apply Weakness Effect on the target on attack.","攻击时可对目标造成虚弱效果");
+        addToolTip("anima_ice_drink","Add 1 level to a random effect you have after consuming (Up to %s).","饮用后随机将你的效果增加1级（至多%s级）");
+        addToolTip("glare_stout","Disorganize all effects duration and level you have which level is lower than %s after consuming.","饮用后打乱你拥有的不大于%s级的药水效果时长和等级");
 
         addToolTip("gauntlet","It's a knife.","没错，这是一把刀！");
         addToolTip("gauntlet_1","Hold on right mouse to break and collect blocks.","长按右键使用来破坏并收集方块");

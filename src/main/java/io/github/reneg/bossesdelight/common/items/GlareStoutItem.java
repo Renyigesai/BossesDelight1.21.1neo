@@ -1,8 +1,12 @@
 package io.github.reneg.bossesdelight.common.items;
 
+import io.github.reneg.bossesdelight.common.config.Config;
+import net.minecraft.ChatFormatting;
+import net.minecraft.network.chat.Component;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import vectorwing.farmersdelight.common.item.DrinkableItem;
 
@@ -23,8 +27,10 @@ public class GlareStoutItem extends DrinkableItem {
         List<Integer> ampifierList = new ArrayList<>();
         if(!list.isEmpty()){
             for(MobEffectInstance effectInstance : list){
-                durationList.add(effectInstance.getDuration());
-                ampifierList.add(effectInstance.getAmplifier());
+                if(effectInstance.getAmplifier() < Config.GLARE_SODA_LEVEL.get()){
+                    durationList.add(effectInstance.getDuration());
+                    ampifierList.add(effectInstance.getAmplifier());
+                }
             }
             Collections.shuffle(durationList);
             Collections.shuffle(ampifierList);
@@ -36,5 +42,11 @@ public class GlareStoutItem extends DrinkableItem {
                 consumer.addEffect(newEffect);
             }
         }
+    }
+
+    @Override
+    public void appendHoverText(ItemStack stack, TooltipContext context, List<Component> tooltip, TooltipFlag isAdvanced) {
+        super.appendHoverText(stack, context, tooltip, isAdvanced);
+        tooltip.add(Component.translatable("tooltip.bosses_delight.glare_stout", Config.GLARE_SODA_LEVEL.get()).withStyle(ChatFormatting.BLUE));
     }
 }

@@ -1,4 +1,4 @@
-// 1.21.1	2026-03-23T15:36:06.4961461	Item Models: bosses_delight
+// 1.21.1	2026-06-20T12:43:54.271977	Item Models: bosses_delight
 384f47d1a3aeb0ebdb0ce9add1dc33357e8d46fe assets/bosses_delight/models/item/ancient_roll.json
 645fc6abf78cef3ba21e1cef2614a0177059565c assets/bosses_delight/models/item/anima_ice_drink.json
 8cb492adaeead9066f2ab1bae1241ae307a255d3 assets/bosses_delight/models/item/anima_popsicle.json
@@ -11,6 +11,7 @@ bf121bc4e50eab75bb3258edb70f099107712b64 assets/bosses_delight/models/item/bloss
 b3be121e79f4d24c6f47575cd8da2075a0048bc2 assets/bosses_delight/models/item/bowl_of_ham_above_palm.json
 13dd514deaca0251fc6258520d339a1de3544866 assets/bosses_delight/models/item/bowl_of_lich_smoothies.json
 cde38b86396d84d9eab01bc3afc4982d04119539 assets/bosses_delight/models/item/bowl_of_magic_frozen_noodles.json
+383cb1e5ca5e4cad5039fc75a8a9f2fa8f159600 assets/bosses_delight/models/item/bowl_of_obsidian_glazed_dragon_brain.json
 f08da43a0ca2f09a01800f0e1061297b03a944a2 assets/bosses_delight/models/item/bowl_of_obsidian_glazed_dragon_head.json
 63994e1d9eede0141f44c36b318192e0c326d646 assets/bosses_delight/models/item/brimstone_nectar_tea.json
 be4e67ebb12a3ac2aa4e51bd47c95136d3ee7cf4 assets/bosses_delight/models/item/broken_obsidian_heart.json
@@ -25,6 +26,8 @@ b34d4f9e33637636aac8067efc8f14b35f2565ba assets/bosses_delight/models/item/lich_
 e620a0337aa26beb67a3aa82fe340aeb2fef37eb assets/bosses_delight/models/item/magic_frozen_noodles_block.json
 11b19d00879cbf91a6ec5cf78efe882254f2aa87 assets/bosses_delight/models/item/nectar_jelly.json
 cc9bd8633d9308b88177bb4b712b1425f9f66fbc assets/bosses_delight/models/item/obsidian_glazed_dragon_head.json
+e813fed01ed59c21243a63da391350b06ede01d1 assets/bosses_delight/models/item/obsidian_glazed_dragon_head_block.json
+8f33b9a973bdea99720c01b08557b45e65ef7ea3 assets/bosses_delight/models/item/obsidian_glazed_dragon_tongue.json
 f71e96b98bc12e7e62824a6054a81206b07a8a5d assets/bosses_delight/models/item/obsidian_heart_knife.json
 41f08ad165a627772b4b5f35289d979bbe6e3488 assets/bosses_delight/models/item/obsidian_onion.json
 22616ab4f8627ded31df68becef5e044858a4c89 assets/bosses_delight/models/item/obsidian_rune_cocktail.json

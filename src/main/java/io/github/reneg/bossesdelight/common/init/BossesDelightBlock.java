@@ -25,7 +25,10 @@ public class BossesDelightBlock {
     public static final DeferredRegister.Blocks BLOCKS = DeferredRegister.createBlocks(BossesDelight.MODID);
 
 
-    public static final DeferredBlock<Block> OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK  = BLOCKS.register("obsidian_glazed_dragon_head_block", () -> new ObsidianGlazedDragonHeadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), BossesDelightItems.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD, true));
+//    public static final DeferredBlock<Block> OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK  = BLOCKS.register("obsidian_glazed_dragon_head_block", () -> new ObsidianGlazedDragonHeadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), BossesDelightItems.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD, true));
+
+    public static final DeferredBlock<Block> OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK_LEGACY  = BLOCKS.register("obsidian_glazed_dragon_head_block", () -> new ObsidianGlazedDragonHeadBlockLegacy(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE), BossesDelightItems.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD, true));
+    public static final DeferredBlock<Block> OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK  = BLOCKS.register("obsidian_glazed_dragon_head", () -> new ObsidianGlazedDragonHeadBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.CAKE)));
 
     public static final DeferredBlock<Block> OBSIDIAN_ONION_BLOCK = BLOCKS.register("obsidian_onion",()-> new ObsidianOnionsBlock(BlockBehaviour.Properties.ofFullCopy(Blocks.WHEAT)));
 

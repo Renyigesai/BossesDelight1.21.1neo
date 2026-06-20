@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
   "container": {
-    "id": "minecraft:bowl",
+    "id": "minecraft:shulker_shell",
     "count": 1
   },
   "cookingtime": 400,
@@ -14,10 +14,10 @@
       "item": "bosses_delight:broken_obsidian_heart"
     },
     {
-      "item": "bosses_delight:obsidian_sauce"
+      "item": "bosses_delight:broken_obsidian_heart"
     },
     {
-      "item": "minecraft:chorus_fruit"
+      "item": "bosses_delight:obsidian_sauce"
     },
     {
       "item": "minecraft:chorus_fruit"

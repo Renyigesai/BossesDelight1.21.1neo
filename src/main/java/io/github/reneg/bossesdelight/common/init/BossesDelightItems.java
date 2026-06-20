@@ -48,8 +48,17 @@ public class BossesDelightItems {
     @ItemData(zhCn = "ºÚê×½½Ö­ÁúÊ×")
     public static final DeferredItem<Item> OBSIDIAN_GLAZED_DRAGON_HEAD;
 
+    @ItemData(zhCn = "ºÚê×½½Ö­ÁúÊ×£¨¾É°æ£©",group = "not")
+    public static final DeferredItem<Item> OBSIDIAN_GLAZED_DRAGON_HEAD_LEGACY;
+
     @ItemData(zhCn = "Íë×°ºÚê×½½Ö­ÁúÊ×")
     public static final DeferredItem<Item> BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD;
+
+    @ItemData(zhCn = "ºÚê×½½Ö­ÁúÉà")
+    public static final DeferredItem<Item> OBSIDIAN_GLAZED_DRAGON_TONGUE;
+
+    @ItemData(zhCn = "Íë×°ºÚê×½½Ö­ÁúÄÔ")
+    public static final DeferredItem<Item> BOWL_OF_OBSIDIAN_GLAZED_DRAGON_BRAIN;
 
     @ItemData(zhCn = "Ë®¾§¹ûÊµÇÐÆ¬")
     public static final DeferredItem<Item> CRYSTAL_FRUIT_SLICE;
@@ -141,7 +150,12 @@ public class BossesDelightItems {
         });
         OBSIDIAN_RUNE_COCKTAIL = ITEMS.register("obsidian_rune_cocktail",()-> new DrinkableItem(defaultBuilder().food(BossesDelightFoods.OBSIDIAN_RUNE_COCKTAIL),true));
         OBSIDIAN_GLAZED_DRAGON_HEAD = ITEMS.register("obsidian_glazed_dragon_head",()-> new BlockItem(BossesDelightBlock.OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK.get(), defaultBuilder().stacksTo(1)));
+        OBSIDIAN_GLAZED_DRAGON_HEAD_LEGACY = ITEMS.register("obsidian_glazed_dragon_head_block",()-> new BlockItem(BossesDelightBlock.OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK_LEGACY.get(), defaultBuilder().stacksTo(1)));
         BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD = ITEMS.register("bowl_of_obsidian_glazed_dragon_head",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD),true));
+
+        OBSIDIAN_GLAZED_DRAGON_TONGUE = ITEMS.register("obsidian_glazed_dragon_tongue",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.OBSIDIAN_GLAZED_DRAGON_TONGUE),true));
+        BOWL_OF_OBSIDIAN_GLAZED_DRAGON_BRAIN = ITEMS.register("bowl_of_obsidian_glazed_dragon_brain",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_BRAIN),true));
+
         CRYSTAL_FRUIT_SLICE = food("crystal_fruit_slice",BossesDelightFoods.CRYSTAL_FRUIT_SLICE,true);
         CRYSTAL_FRUIT_SEEDS = ITEMS.register("crystal_fruit_seeds", () -> new TippedBlockItems(BossesDelightBlock.CRYSTAL_FRUIT_BLOCK.get(),defaultBuilder()));
         CRYSTAL_CUP_CAKE = food("crystal_cup_cake",BossesDelightFoods.CRYSTAL_CUP_CAKE,true);

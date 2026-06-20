@@ -1,0 +1,14 @@
+{
+  "type": "bosses_delight:soul_cooking",
+  "cookingtime": 200,
+  "experience": 1.0,
+  "ingredients": [
+    {
+      "item": "minecraft:snow_block"
+    }
+  ],
+  "result": {
+    "id": "minecraft:ice",
+    "count": 1
+  }
+}

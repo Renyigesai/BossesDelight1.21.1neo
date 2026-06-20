@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:block",
+  "pools": [
+    {
+      "bonus_rolls": 0.0,
+      "conditions": [
+        {
+          "condition": "minecraft:survives_explosion"
+        }
+      ],
+      "entries": [
+        {
+          "type": "minecraft:item",
+          "name": "bosses_delight:soul_cooking_pot"
+        }
+      ],
+      "rolls": 1.0
+    }
+  ],
+  "random_sequence": "bosses_delight:blocks/soul_cooking_pot"
+}

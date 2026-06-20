@@ -96,14 +96,14 @@ public class SoulCookingRecipeCategory implements IRecipeCategory<RecipeHolder<S
         builder.addSlot(RecipeIngredientRole.OUTPUT, 95, 39).addItemStack(resultStack);
     }
 
-    public void draw(RecipeHolder<CookingPotRecipe> holder, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
+    @Override
+    public void draw(RecipeHolder<SoulCookingPotRecipe> recipe, IRecipeSlotsView recipeSlotsView, GuiGraphics guiGraphics, double mouseX, double mouseY) {
         this.arrow.draw(guiGraphics, 60, 9);
         this.heatIndicator.draw(guiGraphics, 18, 39);
         this.timeIcon.draw(guiGraphics, 64, 2);
-        if (((CookingPotRecipe)holder.value()).getExperience() > 0.0F) {
+        if (recipe.value().getExperience() > 0.0F) {
             this.expIcon.draw(guiGraphics, 63, 21);
         }
-
     }
 
     public List<Component> getTooltipStrings(RecipeHolder<CookingPotRecipe> holder, IRecipeSlotsView recipeSlotsView, double mouseX, double mouseY) {

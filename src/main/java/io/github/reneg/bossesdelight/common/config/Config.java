@@ -18,6 +18,8 @@ public class Config {
     public static ModConfigSpec.BooleanValue COLLECT_FEAST;
     public static ModConfigSpec.BooleanValue OBSIDIAN_ONION_CONVERTING;
     public static List<Block> CRYSTAL_FRUIT_PLANTABLE_BLOCKS, OBSIDIAN_ONION_PLANTABLE_BLOCKS;
+    public static ModConfigSpec.IntValue GLARE_SODA_LEVEL;
+    public static ModConfigSpec.IntValue ANIMA_DRINK_LEVEL;
     private static final ModConfigSpec.ConfigValue<List<? extends String>> CRYSTAL_FRUIT_WHITELIST_BLOCKS;
     private static final ModConfigSpec.ConfigValue<List<? extends String>> OBSIDIAN_ONION_WHITELIST_BLOCKS;
 
@@ -30,12 +32,16 @@ public class Config {
                 .comment("I made this BUG to another item with that feature and make it using more reasonable.")
                 .define("ShouldCollectFeastBlock", false);
         COMMON_BUILDER.pop();
+
+
         COMMON_BUILDER.push("Crystal Fruits");
         CRYSTAL_FRUIT_WHITELIST_BLOCKS = COMMON_BUILDER
                 .comment("Define which blocks allow Crystal Fruits to plant on, leave space will use the default value.")
                 .defineListAllowEmpty("CrystalFruitPlantableBlocks",
                         List.of("minecraft:bedrock", "minecraft:budding_amethyst"), Config::validateBlockName);
         COMMON_BUILDER.pop();
+
+
         COMMON_BUILDER.push("Obsidian Onions");
         OBSIDIAN_ONION_WHITELIST_BLOCKS = COMMON_BUILDER
                 .comment("Define which blocks allow Obsidian Onions to plant on, leave space will use the default value.")
@@ -43,6 +49,18 @@ public class Config {
                         List.of("minecraft:obsidian", "minecraft:crying_obsidian"), Config::validateBlockName);
         OBSIDIAN_ONION_CONVERTING = COMMON_BUILDER.comment("Define if Obsidian Onions converting planted blocks to Crying Obsidian.")
                 .define("ShouldObsidianOnionConverting", true);
+        COMMON_BUILDER.pop();
+
+
+        COMMON_BUILDER.push("Glare Soda");
+        GLARE_SODA_LEVEL = COMMON_BUILDER.comment("Modify the max effect level of Glare Soda that can be disorganized.")
+                .defineInRange("DisorganizeMaxLevel", 5, 1, 255);
+        COMMON_BUILDER.pop();
+
+
+        COMMON_BUILDER.push("Anima Ice Drink");
+        ANIMA_DRINK_LEVEL = COMMON_BUILDER.comment("Modify the max effect level of Glare Soda that can be upgraded to.")
+                .defineInRange("UpgradeMaxLevel", 5, 1, 255);
         COMMON_BUILDER.pop();
 
         COMMON_SPEC = COMMON_BUILDER.build();

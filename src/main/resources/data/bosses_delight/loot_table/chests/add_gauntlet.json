@@ -37,6 +37,15 @@
           "name": "bosses_delight:gauntlet"
         }
       ]
+    },
+    {
+      "rolls": 1,
+      "entries": [
+        {
+          "type": "minecraft:loot_table",
+          "name": "minecraft:chests/bastion_treasure"
+        }
+      ]
     }
   ]
 }

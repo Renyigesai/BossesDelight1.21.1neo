@@ -34,7 +34,7 @@ public class BossesDelightFoods {
             .build();
 
     public static final FoodProperties BLAZING_EYE_SHARDS = new FoodProperties.Builder().nutrition(4).saturationModifier(1.0f).effect(() -> new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 1200, 0), 1.0F).effect(() -> new MobEffectInstance(BossesDelightEffects.GAUNTLET_PROTECTION, 600, 0), 0.2F).build();
-    public static final FoodProperties ANCIENT_ROLL = new FoodProperties.Builder().fast().nutrition(6).saturationModifier(1.2f).effect(new MobEffectInstance(MobEffects.DAMAGE_RESISTANCE, 400, 3), 0.6F).build();
+    public static final FoodProperties ANCIENT_ROLL = new FoodProperties.Builder().fast().nutrition(6).saturationModifier(1.2f).effect(()-> new MobEffectInstance(BossesDelightEffects.BREAKDOWN, 3600), 1.0F).build();
     public static final FoodProperties BLAZING_EYE_PIE_SLICE = new FoodProperties.Builder().nutrition(6).saturationModifier(1.0f)
                     .effect(new MobEffectInstance(MobEffects.FIRE_RESISTANCE, 3600, 0), 1.0F)
             .effect(new MobEffectInstance(MobEffects.DIG_SPEED, 1200, 0), 1.0F)
@@ -56,7 +56,12 @@ public class BossesDelightFoods {
 
     public static final FoodProperties BOWL_OF_LICH_SMOOTHIES = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2f).alwaysEdible().effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 1), 1.0F).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 6000, 0), 1.0F).effect(()-> new MobEffectInstance(BossesDelightEffects.INTANGIBLE, 1200, 1), 1.0F).build();
 
-    public static final FoodProperties BOWL_OF_MAGIC_FROZEN_NOODLES = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2f).alwaysEdible().effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 1), 1.0F).effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 6000, 0), 1.0F).effect(()-> new MobEffectInstance(BossesDelightEffects.INTANGIBLE, 1200, 1), 1.0F).build();
+    public static final FoodProperties BOWL_OF_MAGIC_FROZEN_NOODLES = new FoodProperties.Builder().nutrition(12).saturationModifier(1.2f).alwaysEdible()
+                    .effect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 6000, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.JUMP, 6000, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.SLOW_FALLING, 6000, 0), 1.0F)
+            .effect(()->new MobEffectInstance(BossesDelightEffects.INTANGIBLE, 3600, 0), 1.0F)
+            .build();
 
     public static final FoodProperties BOSSES_HODGEPODGE = new FoodProperties.Builder().nutrition(20).saturationModifier(1.0f).alwaysEdible()
                     .effect(()-> new MobEffectInstance(BossesDelightEffects.INTANGIBLE, 1200, 1), 1.0F)
@@ -67,6 +72,19 @@ public class BossesDelightFoods {
             .build();
 
     public static final FoodProperties NECTAR_JELLY = new FoodProperties.Builder().nutrition(8).saturationModifier(0.8f).build();
+
+    public static final FoodProperties OBSIDIAN_GLAZED_DRAGON_TONGUE = new FoodProperties.Builder().nutrition(16).saturationModifier(1.1f).alwaysEdible()
+                    .effect(()-> new MobEffectInstance(BossesDelightEffects.LAST_STAND, 1200, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.DAMAGE_BOOST, 1200, 4), 1.0F)
+            .effect(()-> new MobEffectInstance(ModEffects.NOURISHMENT, 6000, 0), 1.0F)
+            .build();
+
+    public static final FoodProperties BOWL_OF_OBSIDIAN_GLAZED_DRAGON_BRAIN = new FoodProperties.Builder().nutrition(16).saturationModifier(1.1f).alwaysEdible()
+                    .effect(()-> new MobEffectInstance(BossesDelightEffects.LAST_STAND, 3600, 1), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.NIGHT_VISION, 9600, 0), 1.0F)
+            .effect(new MobEffectInstance(MobEffects.CONFUSION, 600, 1), 1.0F)
+            .effect(()-> new MobEffectInstance(ModEffects.NOURISHMENT, 6000, 0), 1.0F)
+            .build();
 
 }
 
