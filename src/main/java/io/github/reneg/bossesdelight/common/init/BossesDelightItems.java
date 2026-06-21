@@ -153,7 +153,7 @@ public class BossesDelightItems {
         OBSIDIAN_GLAZED_DRAGON_HEAD_LEGACY = ITEMS.register("obsidian_glazed_dragon_head_block",()-> new BlockItem(BossesDelightBlock.OBSIDIAN_GLAZED_DRAGON_HEAD_BLOCK_LEGACY.get(), defaultBuilder().stacksTo(1)));
         BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD = ITEMS.register("bowl_of_obsidian_glazed_dragon_head",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_HEAD),true));
 
-        OBSIDIAN_GLAZED_DRAGON_TONGUE = ITEMS.register("obsidian_glazed_dragon_tongue",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.OBSIDIAN_GLAZED_DRAGON_TONGUE),true));
+        OBSIDIAN_GLAZED_DRAGON_TONGUE = ITEMS.register("obsidian_glazed_dragon_tongue",()-> new ConsumableItem(defaultBuilder().food(BossesDelightFoods.OBSIDIAN_GLAZED_DRAGON_TONGUE),true));
         BOWL_OF_OBSIDIAN_GLAZED_DRAGON_BRAIN = ITEMS.register("bowl_of_obsidian_glazed_dragon_brain",()-> new ConsumableItem(bowlFoodBuilder().food(BossesDelightFoods.BOWL_OF_OBSIDIAN_GLAZED_DRAGON_BRAIN),true));
 
         CRYSTAL_FRUIT_SLICE = food("crystal_fruit_slice",BossesDelightFoods.CRYSTAL_FRUIT_SLICE,true);

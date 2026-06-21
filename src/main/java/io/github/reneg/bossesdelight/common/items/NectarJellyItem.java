@@ -1,7 +1,5 @@
 package io.github.reneg.bossesdelight.common.items;
 
-import io.github.reneg.BossesDelight;
-import io.github.reneg.bossesdelight.common.config.ServerConfig;
 import io.github.reneg.bossesdelight.common.init.BossesDelightItems;
 import io.github.reneg.bossesdelight.common.init.BossesDelightTriggers;
 import net.minecraft.ChatFormatting;
@@ -21,53 +19,48 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.context.BlockPlaceContext;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
-import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.CakeBlock;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.phys.BlockHitResult;
 import net.minecraft.world.phys.Vec3;
+import net.neoforged.bus.api.SubscribeEvent;
+import net.neoforged.fml.common.EventBusSubscriber;
 import net.neoforged.neoforge.event.entity.player.PlayerInteractEvent;
 import vectorwing.farmersdelight.common.block.FeastBlock;
 import vectorwing.farmersdelight.common.block.PieBlock;
 
 import java.util.List;
 
-/*@EventBusSubscriber*/
+@EventBusSubscriber
 public class NectarJellyItem extends Item {
     public NectarJellyItem(Properties p_41383_) {
         super(p_41383_);
     }
 
-    public InteractionResult useOn(UseOnContext p_40637_) {
+    private static InteractionResult nectarJellyUseOn(UseOnContext p_40637_){
         Level level = p_40637_.getLevel();
         ItemStack itemstack = p_40637_.getItemInHand();
         BlockPos blockpos = p_40637_.getClickedPos();
         BlockState state = level.getBlockState(blockpos);
-        if (state.getBlock() instanceof CakeBlock || state.getBlock() instanceof FeastBlock || state.getBlock() instanceof PieBlock) {
-            BlockState defaultState = state.getBlock().defaultBlockState();
-            if (state.hasProperty(BlockStateProperties.HORIZONTAL_FACING)
-                    && defaultState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
-                Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
-                defaultState = defaultState.setValue(BlockStateProperties.HORIZONTAL_FACING, direction);
-            }
-            if(!defaultState.equals(state)){
-                if (!level.isClientSide() && p_40637_.getPlayer() instanceof ServerPlayer player) {
-                    BossesDelightTriggers.USE_NECTAR_JELLY_TRIGGER.get().trigger(player);
-                }
-                level.setBlock(blockpos, defaultState, 2);
-                level.playSound((Player)null, blockpos.getX(), blockpos.getY(), blockpos.getZ(), SoundEvents.SLIME_BLOCK_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
-                if (!p_40637_.getPlayer().getAbilities().instabuild) {
-                    itemstack.shrink(1);
-                }
-                return InteractionResult.sidedSuccess(level.isClientSide);
-            }
-            else
-            {
-                return InteractionResult.FAIL;
-            }
+        BlockState defaultState = state.getBlock().defaultBlockState();
+        if (state.hasProperty(BlockStateProperties.HORIZONTAL_FACING) && defaultState.hasProperty(BlockStateProperties.HORIZONTAL_FACING)) {
+            Direction direction = state.getValue(BlockStateProperties.HORIZONTAL_FACING);
+            defaultState = defaultState.setValue(BlockStateProperties.HORIZONTAL_FACING, direction);
         }
-        return InteractionResult.PASS;
+        if(!defaultState.equals(state)){
+            if (!level.isClientSide() && p_40637_.getPlayer() instanceof ServerPlayer player) {
+                BossesDelightTriggers.USE_NECTAR_JELLY_TRIGGER.get().trigger(player);
+            }
+            level.setBlock(blockpos, defaultState, 2);
+            level.playSound((Player)null, blockpos.getX(), blockpos.getY(), blockpos.getZ(), SoundEvents.SLIME_BLOCK_PLACE, SoundSource.PLAYERS, 1.0F, 1.0F);
+            if (!p_40637_.getPlayer().getAbilities().instabuild) {
+                itemstack.shrink(1);
+            }
+            return InteractionResult.sidedSuccess(level.isClientSide);
+        } else {
+            return InteractionResult.FAIL;
+        }
     }
 
     @Override
@@ -77,56 +70,69 @@ public class NectarJellyItem extends Item {
         tooltip.add(Component.translatable(newString).withStyle(ChatFormatting.YELLOW));
     }
 
-    /*@SubscribeEvent*/
-    private static void onUseBlock(PlayerInteractEvent.RightClickBlock event) {
-        Player entity = event.getEntity();
-        if (entity.getMainHandItem().is(BossesDelightItems.NECTAR_JELLY)){
-            event.setCanceled(true);
-            BlockPos pos = event.getPos();
-            BlockState blockState = event.getLevel().getBlockState(pos);
-            List<? extends String> classs = ServerConfig.BLOCK_CLASSES.get();
-            Class<? extends Block> blockClass = blockState.getBlock().getClass();
-            boolean flag = false;
-            try {
-                for (String string : classs) {
-                    Class<?> loadClass = Class.forName(string);
-                    if (loadClass.isAssignableFrom(blockClass)){
-                        flag = true;
-                        break;
-                    }
-                }
-                if (flag){
-                    if (blockState.getBlock().asItem() instanceof BlockItem blockItem){
-
-                        float matchingYaw = findMatchingYaw(blockState, blockItem, entity, event.getLevel(), event.getHand(), event.getHitVec());
-                        float originalYRot = entity.getYRot();
-                        float originalYHeadRot = entity.getYHeadRot();
-                        float originalXRot = entity.getXRot();
-                        float originalXRotO = entity.xRotO;
-
-                        entity.setYRot(matchingYaw);
-                        entity.yRotO = matchingYaw;
-                        entity.setYHeadRot(matchingYaw);
-                        entity.yHeadRotO = matchingYaw;
-
-                        event.getLevel().removeBlock(pos,false);
-                        placeWithFakePlayerPosition(blockItem, pos, Direction.fromYRot(matchingYaw), entity, event.getLevel(), event.getHand(), event.getHitVec());
-
-                        entity.setYRot(originalYRot);
-                        entity.yRotO = originalYRot;
-                        entity.setYHeadRot(originalYHeadRot);
-                        entity.yHeadRotO = originalYHeadRot;
-                        entity.setXRot(originalXRot);
-                        entity.xRotO = originalXRotO;
-
-                        event.setCancellationResult(InteractionResult.SUCCESS);
-                    }
-                }
-            }catch (ClassNotFoundException exception){
-                BossesDelight.LOGGER.error(String.valueOf(exception));
+    @SubscribeEvent
+    private static void onUseBlock(PlayerInteractEvent.RightClickBlock event){
+        Player player = event.getEntity();
+        ItemStack stack = event.getItemStack();
+        BlockState state = event.getLevel().getBlockState(event.getPos());
+        if (stack.is(BossesDelightItems.NECTAR_JELLY)){
+            if (state.getBlock() instanceof CakeBlock || state.getBlock() instanceof FeastBlock || state.getBlock() instanceof PieBlock) {
+                event.setCanceled(true);
+                event.setCancellationResult(nectarJellyUseOn(new UseOnContext(player,event.getHand(),event.getHitVec())));
             }
         }
     }
+
+    /*@SubscribeEvent*/
+//    private static void onUseBlock(PlayerInteractEvent.RightClickBlock event) {
+//        Player entity = event.getEntity();
+//        if (entity.getMainHandItem().is(BossesDelightItems.NECTAR_JELLY)){
+//            event.setCanceled(true);
+//            BlockPos pos = event.getPos();
+//            BlockState blockState = event.getLevel().getBlockState(pos);
+//            List<? extends String> classs = ServerConfig.BLOCK_CLASSES.get();
+//            Class<? extends Block> blockClass = blockState.getBlock().getClass();
+//            boolean flag = false;
+//            try {
+//                for (String string : classs) {
+//                    Class<?> loadClass = Class.forName(string);
+//                    if (loadClass.isAssignableFrom(blockClass)){
+//                        flag = true;
+//                        break;
+//                    }
+//                }
+//                if (flag){
+//                    if (blockState.getBlock().asItem() instanceof BlockItem blockItem){
+//
+//                        float matchingYaw = findMatchingYaw(blockState, blockItem, entity, event.getLevel(), event.getHand(), event.getHitVec());
+//                        float originalYRot = entity.getYRot();
+//                        float originalYHeadRot = entity.getYHeadRot();
+//                        float originalXRot = entity.getXRot();
+//                        float originalXRotO = entity.xRotO;
+//
+//                        entity.setYRot(matchingYaw);
+//                        entity.yRotO = matchingYaw;
+//                        entity.setYHeadRot(matchingYaw);
+//                        entity.yHeadRotO = matchingYaw;
+//
+//                        event.getLevel().removeBlock(pos,false);
+//                        placeWithFakePlayerPosition(blockItem, pos, Direction.fromYRot(matchingYaw), entity, event.getLevel(), event.getHand(), event.getHitVec());
+//
+//                        entity.setYRot(originalYRot);
+//                        entity.yRotO = originalYRot;
+//                        entity.setYHeadRot(originalYHeadRot);
+//                        entity.yHeadRotO = originalYHeadRot;
+//                        entity.setXRot(originalXRot);
+//                        entity.xRotO = originalXRotO;
+//
+//                        event.setCancellationResult(InteractionResult.SUCCESS);
+//                    }
+//                }
+//            }catch (ClassNotFoundException exception){
+//                BossesDelight.LOGGER.error(String.valueOf(exception));
+//            }
+//        }
+//    }
 
     private static float findMatchingYaw(BlockState originalState, BlockItem blockItem, Player player, Level level, InteractionHand hand, BlockHitResult hit) {
         Direction originalDir = null;

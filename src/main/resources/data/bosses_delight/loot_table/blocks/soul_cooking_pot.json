@@ -11,11 +11,19 @@
       "entries": [
         {
           "type": "minecraft:item",
+          "functions": [
+            {
+              "function": "minecraft:copy_name",
+              "source": "block_entity"
+            },
+            {
+              "function": "farmersdelight:copy_meal"
+            }
+          ],
           "name": "bosses_delight:soul_cooking_pot"
         }
       ],
       "rolls": 1.0
     }
-  ],
-  "random_sequence": "bosses_delight:blocks/soul_cooking_pot"
+  ]
 }

@@ -1,7 +1,7 @@
 {
   "type": "farmersdelight:cooking",
   "container": {
-    "id": "minecraft:shulker_shell",
+    "id": "minecraft:purpur_slab",
     "count": 1
   },
   "cookingtime": 400,
